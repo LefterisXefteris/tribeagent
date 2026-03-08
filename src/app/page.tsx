@@ -1,65 +1,95 @@
-import Image from "next/image";
+import Head from "next/head";
+import styles from "./page.module.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <Head>
+        <title>Automation. Websites. AI.</title>
+        <meta name="description" content="Tribe Agent: Creating tomorrow's tech for solo & small businesses." />
+      </Head>
+
+      <main className={styles.main}>
+        {/* Navigation */}
+        <nav className={styles.nav}>
+          <div className={styles.logo}>■●▲</div>
+          <div className={styles.navLinks}>
+            <Link href="#portfolio">Portfolio</Link>
+            <Link href="#services">Services</Link>
+            <Link href="#contact">Contact</Link>
+          </div>
+        </nav>
+
+        {/* Hero Section */}
+        <section className={styles.hero}>
+          <h1 className={styles.heroTitle}>Automation. Websites. AI.</h1>
+          <h2 className={styles.heroSubtitle}>
+            Tribe Agent: Creating tomorrow's tech for solo &amp; small businesses.
+          </h2>
+          <div className={styles.heroButton}>
+            <a href="#contact" className="btn btn-primary">
+              Get Started
+            </a>
+          </div>
+
+          <div className={`glass-card ${styles.heroCard}`}>
+            <div className={`${styles.shape} ${styles.square}`}></div>
+            <div className={`${styles.shape} ${styles.circle}`}></div>
+            <div className={`${styles.shape} ${styles.triangle}`}></div>
+          </div>
+        </section>
+
+        {/* AI Solutions Section */}
+        <section id="services" className={styles.splitSection}>
+          <div className={styles.splitSectionLeft}>
+            <h2 className={styles.splitTitle}>AI-native solutions for real impact.</h2>
+            <p className={styles.splitSubtitle}>
+              Built and deployed cutting-edge AI projects, from VLM health checks to e-commerce innovation.
+            </p>
+          </div>
+          <div className={`glass-card ${styles.splitCard}`}>
+            <div className={`${styles.shape} ${styles.triangle} ${styles.largeShape}`}></div>
+          </div>
+        </section>
+
+        {/* n8n Automations Section */}
+        <section className={styles.splitSection}>
+          <div className={styles.splitSectionLeft}>
+            <h2 className={styles.splitTitle}>n8n automations that save your time.</h2>
+            <p className={styles.splitSubtitle}>
+              Automate repetitive tasks and streamline your workflow with custom n8n integrations.
+            </p>
+          </div>
+          <div className={`glass-card ${styles.splitCard}`}>
+            <div className={`${styles.shape} ${styles.square} ${styles.largeShape}`}></div>
+          </div>
+        </section>
+
+        {/* Portfolio Section */}
+        <section id="portfolio" className={styles.portfolio}>
+          <h3 className={styles.portfolioTitle}>A Diversified Portfolio</h3>
+          <p className={styles.portfolioText}>
+            I'm Lefteris Gilmaz, a sole trader passionate about harnessing automation and AI to power modern business. From AI-powered health checks to automated workflows and seamless Shopify integrations, I keep pushing the boundaries of what's possible.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+          <p className={styles.portfolioText}>
+            Curious about what's next? Watch this space as I turn new ideas into innovative, real-world solutions for ambitious entrepreneurs and solo founders.
+          </p>
+        </section>
+
+        <div className={styles.divider}></div>
+
+        {/* CTA Section */}
+        <section id="contact" className={styles.cta}>
+          <h2 className={styles.ctaTitle}>Ready to Innovate?</h2>
+          <p className={styles.ctaSubtitle}>
+            Let's transform your workflow or AI ambitions. Get<br />in touch now.
+          </p>
+          <a href="mailto:contact@tribeagent.com" className="btn btn-primary">
+            Contact
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+        </section>
       </main>
-    </div>
+    </>
   );
 }
